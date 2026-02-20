@@ -1,20 +1,14 @@
-const fecha = document.getElementById("date");
+const fecha = document.getElementById('date');
 
 function Calcular_btn() {
-    // 1. Convertir el valor del input a un objeto Date
-    const fechaObtenida = new Date(fecha.value);
-    
-    // 2. Extraer el año digitado (¡Ojo! Hay que guardarlo en una variable)
-    const añoDigitado = fechaObtenida.getFullYear();
-    
-    // 3. Obtener el año local actual
-    const añoActual = new Date().getFullYear();
-    
-    // 4. Hacer la resta
-    const resultado = añoActual - añoDigitado;
+  const nacer = new Date(fecha.value);
+  const hoy = new Date();
+  let años = hoy.getFullYear() - nacer.getFullYear();
+  let mes = hoy.getMonth() - nacer.getMonth();
+  let dia = hoy.getDate() - nacer.getDate();
 
-    // 5. Mostrarlo (por ahora en consola)
-    console.log("La diferencia es:", resultado);
-    
-    return resultado;
+  if (mes < 0 || (mes == 0 && dia > 0)) {
+    años--
+  }
+  alert(`La diferencia es: ${años} años`);
 }
