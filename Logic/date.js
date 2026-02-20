@@ -1,5 +1,5 @@
 const fecha = document.getElementById('date');
-
+const mostar_Año = document.getElementById("mostrar")
 function Calcular_btn() {
   const nacer = new Date(fecha.value);
   const hoy = new Date();
@@ -10,5 +10,11 @@ function Calcular_btn() {
   if (mes < 0 || (mes == 0 && dia > 0)) {
     años--
   }
-  alert(`La diferencia es: ${años} años`);
+  if (fecha.value == "" || fecha.value == null  ) {
+    alert("¡Error! Debes seleccionar una fecha antes de calcular.");
+    return; // El 'return' detiene la ejecución de la función aquí mismo
+  }
+ mostar_Año.innerText = años
+
+  
 }

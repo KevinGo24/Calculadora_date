@@ -1,7 +1,10 @@
 body {
-  align-items: center;
-  justify-content: center;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 * {
   margin: 0;
@@ -21,22 +24,23 @@ body {
     box-shadow: 30px 7px 20px #506ee5;
   }
 }
-div {
-  display: flex;
+.padre {
+display: flex;
   justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 100vh;
-  border: 5px hidden white;
-  gap: 20px;
-
+  align-items: center;     /* Centra verticalmente */
+  height: 60vh;
+  border-radius: 20px;
+  animation: cuerpo 10s infinite;
+  border-radius: 20px;
 }
-
 
 header {
   animation: cuerpo 10s infinite;
   text-align: center;
   justify-content: center;
   align-content: center;
+    height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -45,17 +49,27 @@ h1 {
   font-style: oblique;
   color: white;
 }
-
+p {
+  color: white;
+}
+label {
+  color: white;
+}
 input {
   justify-content: center;
   border: none;
   font-size: 40px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-button{
+button {
   height: 50px;
   width: 100px;
   cursor: pointer;
   border: none;
-  border-radius: 10px 10px ;
+  border-radius: 10px 10px;
+}
+button:hover {
+  background: #506ee5;
 }
